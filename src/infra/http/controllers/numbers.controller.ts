@@ -26,7 +26,7 @@ export class NumbersController {
     ) {}
 
     @ApiOperation({ summary: 'Sum Numbers' })
-    @Post(['sum'])
+    @Post('sum')
     @ApiResponseType(ResultViewModel)
     async sumNumbers(@Body() body: NumbersBody) {
         const { result } = await this._sumNumbers.execute(body);
@@ -34,7 +34,7 @@ export class NumbersController {
     }
 
     @ApiOperation({ summary: 'Average Numbers' })
-    @Post(['average'])
+    @Post('average')
     @ApiResponseType(ResultViewModel)
     async averageNumbers(@Body() body: NumbersBody) {
         const { result } = await this._averageNumbers.execute(body);

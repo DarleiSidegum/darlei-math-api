@@ -26,7 +26,7 @@ export class NumberController {
     ) {}
 
     @ApiOperation({ summary: 'Sum Number' })
-    @Post(['sum'])
+    @Post('sum')
     @ApiResponseType(ResultViewModel)
     async sumNumber(@Body() body: NumberBody) {
         const { result } = await this._sumNumber.execute(body);
@@ -34,7 +34,7 @@ export class NumberController {
     }
 
     @ApiOperation({ summary: 'Divide Number' })
-    @Post(['divide'])
+    @Post('divide')
     @ApiResponseType(ResultViewModel)
     async divide(@Body() body: NumberBody) {
         const { result } = await this._divideNumber.execute(body);

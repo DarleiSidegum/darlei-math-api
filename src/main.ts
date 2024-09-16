@@ -21,11 +21,11 @@ async function bootstrap() {
     app.enableCors({
         credentials: true,
         origin: true,
-        allowedHeaders: ['Authorization', 'ResetToken', 'versao', 'Origin', 'X-Requested-With', 'Content-Type', 'Accept'],
-        exposedHeaders: ['Authorization', 'ResetToken', 'versao'],
+        allowedHeaders: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept'],
+        exposedHeaders: [],
     });
     app.useGlobalPipes(new ValidationPipe());
     app.useGlobalInterceptors(new ResponseInterceptor());
-    await app.listen(process.env.API_PORT);
+    await app.listen(3000);
 }
 bootstrap();
